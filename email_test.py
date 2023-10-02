@@ -8,7 +8,8 @@ config = dotenv_values(".env")
 email = EmailMessage()
 email['from'] = 'mustafa.prodhan2@gmail.com'
 email['to'] = 'mustafizur.prodhan@gmail.com'
-email['subject'] = 'Test'
+email['cc'] = 'mustafa.prodhan.317@gmail.com'
+email['subject'] = 'Ja Wohl!'
 
 email.set_content('Test')
 
