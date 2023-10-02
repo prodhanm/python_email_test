@@ -1,4 +1,3 @@
-import os
 import smtplib
 from email.message import EmailMessage
 from dotenv import dotenv_values
@@ -9,6 +8,7 @@ email = EmailMessage()
 email['from'] = 'mustafa.prodhan2@gmail.com'
 email['to'] = 'mustafizur.prodhan@gmail.com'
 email['cc'] = 'mustafa.prodhan.317@gmail.com'
+email['bcc'] = 'sabina.yasmin.1010@gmail.com'
 email['subject'] = 'Ja Wohl!'
 
 email.set_content('Test')
