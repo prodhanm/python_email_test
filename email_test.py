@@ -1,10 +1,13 @@
 import smtplib
 from email.message import EmailMessage
 from dotenv import dotenv_values
+from string import Template
+from pathlib import Path
 from email_addr import *
 
 config = dotenv_values(".env")
 
+html = Template(Path("index.html").read_text())
 email = EmailMessage()
 
 email['from'] = email_from
@@ -15,7 +18,13 @@ email['bcc'] = [mail for mail in email_bcc]
 
 email['subject'] = 'Good Day!!'
 
-email.set_content('Test')
+email.set_content(html.substitute({
+    "name1": "Mufassa",
+    "name2": "Sabina",
+    "name3": "Mizan",
+    "name4": "Queeny"
+}))
+#email.set_content('Test')
 
 with smtplib.SMTP(host=config["HOST"], \
                   port=config["PORT"]) as smtp:
