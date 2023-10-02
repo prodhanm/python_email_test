@@ -1,15 +1,19 @@
 import smtplib
 from email.message import EmailMessage
 from dotenv import dotenv_values
+from email_addr import *
 
 config = dotenv_values(".env")
 
 email = EmailMessage()
-email['from'] = 'mustafa.prodhan2@gmail.com'
-email['to'] = 'mustafizur.prodhan@gmail.com'
-email['cc'] = 'mustafa.prodhan.317@gmail.com'
-email['bcc'] = 'sabina.yasmin.1010@gmail.com'
-email['subject'] = 'Ja Wohl!'
+
+email['from'] = email_from
+email['to'] = email_to
+email['cc'] = email_to
+
+email['bcc'] = [mail for mail in email_bcc]
+
+email['subject'] = 'Good Day!!'
 
 email.set_content('Test')
 

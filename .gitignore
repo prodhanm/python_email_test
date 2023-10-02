@@ -188,4 +188,7 @@ launch.json
 *.indd
 *.raw
 
+#confidential files
+email_addr.py
+
 # End of https://www.toptal.com/developers/gitignore/api/python
