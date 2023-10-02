@@ -23,7 +23,7 @@ email.set_content(html.substitute({
     "name2": "Sabina",
     "name3": "Mizan",
     "name4": "Queeny"
-}))
+}), 'html')
 #email.set_content('Test')
 
 with smtplib.SMTP(host=config["HOST"], \
