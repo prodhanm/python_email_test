@@ -12,19 +12,13 @@ email = EmailMessage()
 
 email['from'] = email_from
 email['to'] = email_to
-email['cc'] = email_to
+email['cc'] = email_cc
 
 email['bcc'] = [mail for mail in email_bcc]
 
 email['subject'] = 'Good Day!!'
 
-email.set_content(html.substitute({
-    "name1": "Mufassa",
-    "name2": "Sabina",
-    "name3": "Mizan",
-    "name4": "Queeny"
-}), 'html')
-#email.set_content('Test')
+email.set_content(html.substitute(name="Mufassa"), 'html')
 
 with smtplib.SMTP(host=config["HOST"], \
                   port=config["PORT"]) as smtp:
